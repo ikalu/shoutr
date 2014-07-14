@@ -1,0 +1,4 @@
+<%= div_for(shout) do %>
+  <%=shout.body%>
+<span style="font-size:8px" ><i>Shouted at about <%= time_ago_in_words(shout.created_at) %> ago</i></span></p>
+<%end%>
