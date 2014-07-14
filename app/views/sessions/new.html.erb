@@ -1,13 +1,3 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div>
-    <%= form.label :username %>
-    <%= form.username_field :username %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit "Sign in" %>
-  </div>
-<% end %>
+<h3>Sign In</h3>
+
+<%= render "sign_in" %>

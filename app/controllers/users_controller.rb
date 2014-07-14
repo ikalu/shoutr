@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.valid?
       sign_in(@user)
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :email, :password)
   end
 end
 
