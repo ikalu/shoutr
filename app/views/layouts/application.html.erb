@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shoutr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Shoutr</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
-<body>
-<% if signed_in? %>
-  Welcome <%= current_user.email %>
-<%= link_to "Sign out", session_path, method: :delete %><br />
-<% else %>
-<nav>
-  <%= link_to "Sign up", new_user_path%>
-  <%= link_to "Sign in", new_session_path%>
-</nav>
-<%end%>
+<body id="<%= [controller_name, action_name].join("-") %>">
 
-<%= yield %>
+  <header class="top-bar">
+    <% if signed_in? %>
+      <%= link_to "Welcome #{current_user.username }", root_path %>
+      <%= link_to "Sign out", session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign in", new_session_path %>
+      <%= link_to "Sign up", new_user_path %>
+    <% end %>
+  </header>
 
-</body>
+  <div id="main-content">
+    <%= yield %>
+  </div>
+  
+  </body>
 </html>

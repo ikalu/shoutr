@@ -1,5 +1,15 @@
-<h3>Sign Up</h3>
-<%= render "sign_up", user: @user%>
+<div id="home">
+  <header>
+    <h1>Welcome to Shoutr</h1>
+    <p>You can do anything on Shoutr. The only limitation is your imagination!</p>
+  </header>
 
-<h3>Sign In</h3>
-<%= render "sign_in" %>
+  <div class="home-forms">
+    <div class="home-form">
+      <%= render "sign_in" %>
+    </div>
+    <div class="home-form">
+      <%= render "sign_up", user: @user %>
+    </div>
+  </div>
+</div>

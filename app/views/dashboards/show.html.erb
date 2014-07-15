@@ -1,13 +1,20 @@
-<div class="shouts">
-  <h2>Dashboard</h2>
-  <%= render @shouts%>
-
-  <%=form_for @shout do |form|%>
-     <%= form.text_field :body %>
-     <%= form.submit "Shout" %>
-   <%end%>
-
+<div class="timeline">
+  <header>
+    <h1>Shouts</h1>
+  </header>
+  <%= render @shouts %>
 </div>
 
+<%=form_for @shout do |form|%>
+  <%= form.text_field :body %>
+<%= button_tag icon('bullhorn') %>
+   <%end%>
 
+<div class="following">
+  Following: <%= render current_user.followed_users %>
+ </div>
+
+<div class="followers">
+  Followers: <%= render current_user.followers %>
+ </div>
 

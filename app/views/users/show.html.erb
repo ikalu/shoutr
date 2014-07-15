@@ -1,0 +1,12 @@
+Following: <%=render @user.followed_users %>
+
+<% if current_user == @user%>
+
+<%elsif current_user.following?(@user) %>
+  <%= button_to "Unfollow", Unfollow_user_path(current_user), method: :delete, data: { confirm: "Are you sure?" } %>
+<% else%>
+  <%= button_to "Follow", follow_user_path(@user) %>
+  <% end %>
+<h4><%=@user.username%></h4>
+<%= render @shouts%>
+

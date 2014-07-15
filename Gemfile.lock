@@ -38,6 +38,8 @@ GEM
     coffee-script-source (1.7.1)
     erubis (2.7.0)
     execjs (2.2.1)
+    font-awesome-sass (4.1.0)
+      sass (~> 3.2)
     hike (1.2.3)
     i18n (0.6.11)
     jquery-rails (3.1.1)
@@ -114,6 +116,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  font-awesome-sass
   jquery-rails
   monban (~> 0.1.1)
   monban-generators (~> 0.0.3)
