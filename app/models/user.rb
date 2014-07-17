@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
     followed_users.destroy(user)
   end
 
+  def timeline
+    Shout.where(user_id: [id] + followed_user_ids).order(created_at: :desc)
+  end
+
   def to_param
     username
   end

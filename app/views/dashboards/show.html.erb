@@ -5,8 +5,13 @@
   <%= render @shouts %>
 </div>
 
-<%=form_for @shout do |form|%>
+<%=form_for @text_shout do |form|%>
   <%= form.text_field :body %>
+<%= button_tag icon('bullhorn') %>
+   <%end%>
+
+   <%=form_for @photo_shout do |form|%>
+  <%= form.file_field :image %>
 <%= button_tag icon('bullhorn') %>
    <%end%>
 

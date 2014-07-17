@@ -1,0 +1,4 @@
+<%= div_for(photo_shout) do %>
+  <%=image_tag photo_shout.image.url%>
+<%end%>
+
